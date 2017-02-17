@@ -31,15 +31,6 @@ h1,h2,h3,h4,h5,h6,p {
   margin: 0;
 }
 
-h1,h2,h3,h4,h5,h6,body {
-line-height: 1.57;
-  letter-spacing: 0.15em;
-  font-size: 16px;
-  color: $dark;
-  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
-  margin: 0;
-}
-
 a {
   text-decoration: none;
   color: $dark;
@@ -75,10 +66,6 @@ a {
   }
 }
 
-.title {
-  font-weight: bold;
-}
-
 
 header {
   height: 120px;
@@ -88,14 +75,14 @@ header {
 .heading {
   padding-top: 10px;
   margin: 0 auto;
-  width: 960px;
+  width: 660px;
 }
 
 .navbar {
   margin: 0 auto;
   height: 20px;
   padding: 15px;
-  width: 960px;
+  width: 660px;
 }
 
 .post {
@@ -106,7 +93,7 @@ header {
   height: 400px;
   margin: 10px auto;
   background-color: white;
-  width: 680px;
+  width: 660px;
 }
 
 footer {
@@ -136,6 +123,7 @@ ul li {
 
 
   div.content_post {
+    padding: 20px;
     position: relative;
     height: 400px;
     color: #fff;
@@ -190,17 +178,6 @@ ul li {
           }
         }
       }
-    }
-    p {
-      position: absolute;
-      left: 30px;
-      right: 100px;
-      bottom: 30px;
-      margin: 0;
-      font-size: 20px;
-      z-index: 2;
-      font-weight: bold;
-      text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
     }
     span.name {
       position: absolute;
