@@ -121,6 +121,20 @@ ul li {
   padding-right: 10px;
 }
 
+div.contents.row {
+  h2 {
+    @include boxBase(20px 0, 0);
+    font-weight: normal;
+    strong {
+      font-weight: bold;
+      padding-right: 5px;
+      font-size: 1.2em;
+    }
+  }
+  .new_user{
+  font-family: "游ゴシック", "YuGothic";
+  }
+}
 
   div.content_post {
     padding: 20px;
