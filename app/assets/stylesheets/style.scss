@@ -90,9 +90,7 @@ header {
 }
 
 .contents {
-  height: 400px;
   margin: 10px auto;
-  background-color: white;
   width: 660px;
 }
 
@@ -140,7 +138,7 @@ div.contents.row {
     padding: 20px;
     position: relative;
     height: 400px;
-    color: #fff;
+    color: gray;
     background-size: cover;
     background-position: center center;
     border-radius: 3px;
