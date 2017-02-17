@@ -18,8 +18,7 @@ $white: white;
 }
 
 
-body,html {
-  height: 100%;
+body{
   background-color: #fafafa;
   font-size: 14px;
   color: #333;
@@ -68,31 +67,46 @@ a {
 
 
 header {
-  height: 130px;
+  height: 80px;
+  width: 100%;
   background-color: white;
   border-bottom: solid 1px #e7e7e7;
+  position: fixed;
+  z-index: 10;
 }
 
 .heading {
-  padding-top: 5px;
-  margin: 0 auto;
-  width: 660px;
+  height: 80px;
+  padding: 10px;
+  margin: 0 50px;
+  float: left;
 }
 
 .navbar {
-  margin: 0 auto;
-  height: 20px;
-  padding: 15px;
-  width: 660px;
+  height: 80px;
+  padding: 35px;
+  margin: 0 50px;
+  float: right;
+  li{
+  margin: 0 5px;
+  }
+}
+
+.contents-wrapper{
+    z-index: 0;
 }
 
 .post {
   float: right;
 }
 
+.clear {
+    clear: both;
+}
+
 .contents {
-  margin: 10px auto;
   width: 660px;
+  padding: 100px 0 0 0;
 }
 
 footer {

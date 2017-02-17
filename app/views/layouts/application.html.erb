@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+<div class="wrapper">
   <header>
     <div class="heading">
       <h1><a href="/">TECH::HELPER</a></h1>
@@ -30,11 +30,12 @@
       <% else %>
         <%= link_to 'ログインして質問を投稿', '/users/sign_in' %>
     <% end %>
-
     </div>
   </header>
 
-<%= yield %>
+  <div class="contents-wrapper">
+    <%= yield %>
+  </div>
 
   <footer>
   <p>
@@ -42,6 +43,7 @@
   </p>
   </footer>
 
+</div>
 </body>
 
 </html>
