@@ -52,3 +52,6 @@ gem 'devise'
 
 #paperclipは画像アップロード用のgem
 gem 'paperclip'
+
+#ページネーション
+gem 'kaminari'
