@@ -67,7 +67,7 @@ a {
 
 
 header {
-  height: 80px;
+  height: 70px;
   width: 100%;
   background-color: white;
   border-bottom: solid 1px #e7e7e7;
@@ -76,15 +76,15 @@ header {
 }
 
 .heading {
-  height: 80px;
+  height: 70px;
   padding: 10px;
   margin: 0 50px;
   float: left;
 }
 
 .navbar {
-  height: 80px;
-  padding: 35px;
+  height: 70px;
+  padding: 30px;
   margin: 0 50px;
   float: right;
   li{
@@ -111,15 +111,6 @@ header {
 
 footer {
   text-align: center;
-}
-
-.title {
-  font-family: sans-serif;
-  color: gray;
-}
-
-.orange {
-  color: orange;
 }
 
 ul {
