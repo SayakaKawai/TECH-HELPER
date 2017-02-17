@@ -1,0 +1,11 @@
+<div class="contents row">
+  <%= form_tag('/questions', method: :post) do %>
+    <h3>
+      質問を投稿する
+    </h3>
+    <input placeholder="質問のタイトル" type="text" name="title"><br /><br />
+    <input placeholder="参考画像url" type="text" name="image"><br /><br />
+    <textarea cols="30" name="text" placeholder="質問の内容（できるだけ詳細に！）" rows="10"></textarea><br /><br />
+    <input type="submit" value="SENT">
+  <% end %>
+</div>
