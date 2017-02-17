@@ -5,14 +5,14 @@
         <div class="more">
           <span><%= image_tag 'arrow_top.png' %></span>
           <ul class="more_list">
+            <li>
+              <%= link_to '詳細', "/questions/#{question.id}" %>
+            </li>
             <% if user_signed_in? && current_user.id == question.user_id %>
               <li>
                 <%= link_to '削除', "/questions/#{question.id}", method: :delete %>
               </li>
             <% end %>
-            <li>
-              <%= link_to '詳細', "/questions/#{question.id}" %>
-            </li>
           </ul>
         </div>
 
