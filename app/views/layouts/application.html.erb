@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>TECH::HELPER</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [ 'Unica+One::latin' ] }
+    };
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <div class="heading">
+      <h1 class="title"><span class="orange">TECH</span>::HELPER</h1>
+    </div>
+
+    <div class="navbar">
+      <ul>
+        <li>質問を投稿</li>
+        <li>新規登録</li>
+       </ul>
+    </div>
+  </header>
+
+<%= yield %>
+
+  <footer>
+  <p>
+    Copyright TECH::HELPER 2017.
+  </p>
+  </footer>
+
+</body>
+
+</html>
