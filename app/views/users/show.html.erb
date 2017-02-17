@@ -3,10 +3,9 @@
     <div class="content_post" style="background-image: url(<%= question.image %>);">
       <p><b>■ 質問タイトル</b><%= simple_format(question.title) %></p>
       <p><b>■ 質問内容</b><%= simple_format(question.text) %></p>
-      <span class="name">投稿者；<%= question.user.nickname %></span>
+      <span class="name">投稿者；<%= question.user_id %></span>
     </div>
     <br />
   <% end %>
   <%= paginate(@questions) %>
 </div>
-

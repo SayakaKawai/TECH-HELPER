@@ -20,7 +20,7 @@ $white: white;
 
 body,html {
   height: 100%;
-  background-color: $lightGray;
+  background-color: #fafafa;
   font-size: 14px;
   color: #333;
   margin: 0 auto;
@@ -68,12 +68,13 @@ a {
 
 
 header {
-  height: 120px;
+  height: 130px;
   background-color: white;
+  border-bottom: solid 1px #e7e7e7;
 }
 
 .heading {
-  padding-top: 10px;
+  padding-top: 5px;
   margin: 0 auto;
   width: 660px;
 }

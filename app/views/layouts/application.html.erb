@@ -17,14 +17,20 @@
 
   <header>
     <div class="heading">
-      <h1 class="title"><%= link_to 'TECH', '/', class: 'orange' %><%= link_to '::HELPER', '/' %></h1>
+      <h1><a href="/">TECH::HELPER</a></h1>
     </div>
 
     <div class="navbar">
-      <ul>
-        <li><%= link_to '質問を投稿', '/questions/new' %></li>
-        <li><%= link_to '新規登録', '/users/sign_up' %></li>
-       </ul>
+     <% if user_signed_in? %>
+          <ul>
+            <li><a href="/users/<%= current_user.id %>">マイページ</a></li>
+            <li><a href="/questions/new"> 投稿する </a></li>
+            <li><%= link_to " ログアウト ", destroy_user_session_path, method: :delete %></li>
+          </ul>
+      <% else %>
+        <%= link_to 'ログインして質問を投稿', '/users/sign_in' %>
+    <% end %>
+
     </div>
   </header>
 
