@@ -1,0 +1,32 @@
+<div class="contents row">
+  <div class="content_post" style="background-image: url(http://frame-illust.com/fi/wp-content/uploads/2014/10/bea933d25fced143d8d358963c97cf90.png);">
+    <p><b>■ 質問タイトル</b><%= simple_format(@question.title) %></p>
+    <p><b>■ 質問内容</b><%= simple_format(@question.text) %></p>
+    <span class="name">投稿者；<%= @question.user.nickname %></span>
+  </div>
+
+  <div class="container">
+    <!-- ここからフォーム -->
+    <% if current_user %>
+      <%= form_tag("/questions/#{@question.id}/answers", method: :post) do %>
+        <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
+        <input type="submit" value="SENT">
+      <% end %>
+    <% end %>
+
+    <div class="comments">
+      <h4>＜回答一覧＞</h4>
+      <% if @answers %>
+        <% @answers.each do |answer| %>
+          <p>
+            <strong><%= link_to answer.user.nickname, "/users/#{answer.user_id}" %>：</strong>
+            <%= answer.text %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+
+
+
+  </div>
+</div>
