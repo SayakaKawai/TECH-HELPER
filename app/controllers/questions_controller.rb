@@ -1,16 +1,14 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all.order("id DESC").page(params[:page]).per(5)
+    @questions = Question.includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
 
   def new
   end
 
   def create
-    new_question = Question.new(question_params)
-    new_question.image = 'http://free-webdesigner.com/fw/wp-content/uploads/2014/10/stationery5.gif'
-    new_question.save
+    Question.create(title: question_params[:title], text: question_params[:text], user_id: current_user.id)
   end
 
   private
