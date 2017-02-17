@@ -1,5 +1,5 @@
-<div class="contents clearfix">
-  <% @question.each do |question| %>
+<div class="contents row">
+  <% @questions.each do |question| %>
     <div class="content_post" style="background-image: url(<%= question.image %>);">
       <p>■ 質問タイトル ■<%= simple_format(question.title) %></p>
       <p>■ 質問内容 ■<%= simple_format(question.text) %></p>
@@ -7,5 +7,6 @@
     </div>
     <br />
   <% end %>
+  <%= paginate(@questions) %>
 </div>
 
