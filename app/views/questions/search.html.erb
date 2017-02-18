@@ -1,6 +1,6 @@
 <div class="contents">
   <div class="contents-title">
-    <h3>検索結果: <%= @questions.count %>件</h3>
+    <h3>「<%= params[:keyword] %>」の検索結果: <%= @questions.count %>件</h3>
   </div>
 
   <% @questions.each do |question| %>

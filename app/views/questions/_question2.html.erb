@@ -10,8 +10,10 @@
 
   <div class="more">
     <ul>
-      <li><%= link_to '詳細', "/questions/#{question.id}" %></li>
+      <li><%= link_to '削除', "/questions/#{question.id}", method: :delete %></li>
       <li><font color="#bebebe">回答: <%= question.answers.count %>件</font></li>
+      <% if user_signed_in? && current_user.id == question.user_id %>
+      <% end %>
   </div>
 
 </div>
