@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root   'questions#index'   #ルートパスの指定
+  get 'questions/yet' => 'questions#yet'
   resources :questions do
     resources :answers, only: [:create]
     collection do
@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show]
+  root   'questions#index'   #ルートパスの指定
+
 end

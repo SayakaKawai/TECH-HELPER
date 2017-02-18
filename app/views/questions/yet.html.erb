@@ -1,0 +1,10 @@
+<div class="contents">
+  <div class="contents-title">
+      <h3>回答を求む！！: <%= @yet_question_all.count %>件</h3>
+  </div>
+
+  <% @yet_question_all.each do |question| %>
+    <%= render partial: "questions/question", locals: { question: question } %>
+  <% end %>
+
+</div>

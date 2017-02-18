@@ -119,20 +119,59 @@ textarea:focus {
         padding-right: 10px;
       }
 
+
+/*-----------------------------------------
+ここからはコンテンツ＆サイドバーの箱を指定
+-----------------------------------------
+*/
+.contents-wrapper{
+  width: 1077px;
+  padding-top: 70px;
+  margin: 0 auto;
+  min-height: 515px;
+}
+
+/*-----------------------------------------
+ここからはサイドバーの中身を指定
+-----------------------------------------
+*/
+
+.side-bar {
+  width: 280px;
+  margin-right: 45px;
+  float: left;
+  margin-top: 20px;
+}
+
+.side-bar p {
+  padding: 10px;
+}
+
+.side-bar-content{
+  background-color: white;
+  width: 278px;
+  margin-top: 10px;
+  border: solid 1px #e7e7e7;
+}
+
+.side-bar-title {
+  padding: 12px 20px;
+  width: 238px;
+  background-color: #dedede;
+  border-bottom: solid 1px #e7e7e7;
+}
+
+
 /*-----------------------------------------
 ここからは各画面用の中身を指定 <%= yield %>の内容。
-<class=contents>：中身の大枠
-  <question>：質問いっこ。たいていeachで繰り返してる
-  <answer-form>：回答送信フォーム
-  <answers>：回答の箱。
 -----------------------------------------
 */
 
 .contents {
   width: 660px;
-  padding-top: 70px;
-  margin: 0 auto;
+  margin: 0 45px;
   min-height: 515px;
+  float: left;
 }
 
 /*「〜さんの投稿一覧」「質問を投稿する」「ログイン」「検索結果：」*/
@@ -150,7 +189,7 @@ textarea:focus {
     background-color: white;
     width: 660px;
     margin: 30px 0;
-    border: solid 1px #e7e7e7;
+    border: solid 2px #e7e7e7;
   }
 
     .topic {

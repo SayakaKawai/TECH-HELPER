@@ -1,5 +1,19 @@
 class QuestionsController < ApplicationController
 
+  before_action :yetanswer_questions
+
+  def yetanswer_questions
+    y = []
+    allquestions = Question.all
+    allquestions.each do |question|
+      if question.answers.count == 0
+        y << question.id
+      end
+    end
+    yet_answers = Question.where(id: y)
+    @yet = yet_answers.order("id DESC").limit(5)
+  end
+
   def index
     @questions = Question.includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
@@ -25,6 +39,18 @@ class QuestionsController < ApplicationController
 
   def search
     @questions = Question.where('text LIKE(?)', "%#{params[:keyword]}%")
+  end
+
+  def yet
+    y = []
+    allquestions = Question.all
+    allquestions.each do |question|
+      if question.answers.count == 0
+        y << question.id
+      end
+    end
+    yet_answers = Question.where(id: y)
+    @yet_question_all = yet_answers.order("id DESC")
   end
 
   private

@@ -47,7 +47,44 @@
 
   </header>
 
+  <div class="contents-wrapper">
     <%= yield %>
+    <div class="side-bar">
+
+      <div class="side-bar-content">
+        <div class="side-bar-title">
+          未回答の質問　　　　　　　　[<%= link_to '一覧', '/questions/yet' %>]
+        </div>
+        <% if @yet %>
+          <% @yet.each do |question| %>
+            <p>Q. <%= link_to "#{question.title}", "/questions/#{question.id}" %></p>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="side-bar-content">
+        <div class="side-bar-title">
+          カテゴリ
+        </div>
+        <p>Webアプリケーションコース</p>
+        <p>エキスパートコース</p>
+        <p>VRコース</p>
+        <p>イナズマ一週間コース</p>
+      </div>
+
+      <div class="side-bar-content">
+        <div class="side-bar-title">
+          回答数ランキング
+        </div>
+        <p>1位: さやか さん</p>
+        <p>2位: 美味しい牛乳 さん</p>
+        <p>3位: みかん さん</p>
+        <p>4位: コーンポタージュさん</p>
+        <p>5位: yuimetalさん</p>
+      </div>
+
+    </div>
+  </div>
 
   <footer>
   <p>
