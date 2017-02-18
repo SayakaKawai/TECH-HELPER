@@ -1,20 +1,19 @@
-<div class="contents row">
-  <div class="content_post" style="background-image: url(http://frame-illust.com/fi/wp-content/uploads/2014/10/bea933d25fced143d8d358963c97cf90.png);">
-    <p><b>■ 質問タイトル</b><%= simple_format(@question.title) %></p>
-    <p><b>■ 質問内容</b><%= simple_format(@question.text) %></p>
-    <span class="name">投稿者；<%= @question.user.nickname %></span>
-  </div>
+<div class="contents">
 
-  <div class="container">
-    <!-- ここからフォーム -->
+  <!-- 質問を表示 -->
+  <%= render partial: "questions/question", locals: { question: @question } %>
+
+  <!-- ここから回答フォーム -->
+  <div class="answer-form">
     <% if current_user %>
       <%= form_tag("/questions/#{@question.id}/answers", method: :post) do %>
-        <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
+        <textarea name="text" placeholder="回答する"></textarea>
         <input type="submit" value="SENT">
       <% end %>
     <% end %>
+  </div>
 
-    <div class="comments">
+  <div class="answers">
       <h4>＜回答一覧＞</h4>
       <% if @answers %>
         <% @answers.each do |answer| %>
@@ -24,9 +23,6 @@
           </p>
         <% end %>
       <% end %>
-    </div>
-
-
-
   </div>
+
 </div>

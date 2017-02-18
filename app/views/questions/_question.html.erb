@@ -1,0 +1,20 @@
+<div class="question" >
+  <div class="name">
+    <%= link_to "#{question.user.nickname}", "/users/#{question.user.id}" %>
+  </div>
+
+  <div class="question-content">
+    <p><b>■ 質問タイトル</b><%= simple_format(question.title) %></p>
+    <p><b>■ 質問内容</b><%= simple_format(question.text) %></p>
+  </div>
+
+  <div class="more">
+    <ul>
+      <% if user_signed_in? && current_user.id == question.user_id %>
+        <li><%= link_to '削除', "/questions/#{question.id}", method: :delete %></li>
+      <% end %>
+      <li><%= link_to '詳細', "/questions/#{question.id}" %></li>
+      <li>回答: 5件</li>
+  </div>
+
+</div>

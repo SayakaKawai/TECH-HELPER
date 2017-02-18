@@ -1,12 +1,14 @@
-<div class="contents row">
-<p><%= @nickname %>さんの質問一覧</p>
+<div class="contents">
+
+  <div class="contents-title">
+    <h3><%= @nickname %>さんの質問一覧</h3>
+    <h4>質問数: <%= @questions.count %>件</h4>
+  </div>
+
   <% @questions.each do |question| %>
-    <div class="content_post" style="background-image: url(http://frame-illust.com/fi/wp-content/uploads/2014/10/bea933d25fced143d8d358963c97cf90.png);">
-      <p><b>■ 質問タイトル</b><%= simple_format(question.title) %></p>
-      <p><b>■ 質問内容</b><%= simple_format(question.text) %></p>
-      <span class="name">投稿者；<%= question.user.nickname %></span>
-    </div>
-    <br />
+    <%= render partial: "questions/question", locals: { question: question } %>
   <% end %>
+
   <%= paginate(@questions) %>
+
 </div>

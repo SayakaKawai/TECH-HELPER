@@ -1,27 +1,6 @@
-<div class="contents row">
+<div class="contents">
   <% @questions.each do |question| %>
-    <div class="content_post" style="background-image: url(http://frame-illust.com/fi/wp-content/uploads/2014/10/bea933d25fced143d8d358963c97cf90.png);">
-
-        <div class="more">
-          <span><%= image_tag 'arrow_top.png' %></span>
-          <ul class="more_list">
-            <li>
-              <%= link_to '詳細', "/questions/#{question.id}" %>
-            </li>
-            <% if user_signed_in? && current_user.id == question.user_id %>
-              <li>
-                <%= link_to '削除', "/questions/#{question.id}", method: :delete %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-
-      <p><b>■ 質問タイトル</b><%= simple_format(question.title) %></p>
-      <p><b>■ 質問内容</b><%= simple_format(question.text) %></p>
-      <span class="name">投稿者；<%= question.user.nickname %></span>
-
-    </div>
-    <br />
+    <%= render partial: "questions/question", locals: { question: question } %>
   <% end %>
   <%= paginate(@questions) %>
 </div>
