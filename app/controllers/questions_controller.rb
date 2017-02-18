@@ -23,6 +23,10 @@ class QuestionsController < ApplicationController
     @answers = @question.answers.includes(:user).order("created_at DESC")
   end
 
+  def search
+    @questions = Question.where('text LIKE(?)', "%#{params[:keyword]}%")
+  end
+
   private
   def question_params
     params.permit(:title, :text)

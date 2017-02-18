@@ -14,7 +14,7 @@
         <li><%= link_to '削除', "/questions/#{question.id}", method: :delete %></li>
       <% end %>
       <li><%= link_to '詳細', "/questions/#{question.id}" %></li>
-      <li>回答: 5件</li>
+      <li>回答: <%= question.answers.count %>件</li>
   </div>
 
 </div>
