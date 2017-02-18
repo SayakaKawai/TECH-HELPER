@@ -38,6 +38,13 @@
         <%= link_to 'ログインして質問を投稿', '/users/sign_in' %>
     <% end %>
     </div>
+
+    <div class="search">
+      <%= form_tag('/products/search', method: :get) do %>
+        <input name="keyword" type="text" value=""><button class="btn-search" title="検索" type="submit">検索</button></input>
+      <% end %>
+    </div>
+
   </header>
 
     <%= yield %>
